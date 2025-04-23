@@ -56,3 +56,16 @@
   align-items: center;
   justify-content: center;
 }
+
+.filter-btn {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: beige;
+  border: 1px solid saddlebrown;
+  color: chocolate;
+  font-size: 15px;
+  border-radius: 5px;
+  height: 30px;
+  width: 200px;
+  margin: 10px;
+  cursor: pointer;
+}
