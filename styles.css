@@ -33,7 +33,7 @@
   justify-content: space-around;
   align-items: center;
   width: 250px;
-  height: 300px;
+  height: 500px;
   background-color: #f0f0f0;
 }
 .res-card:hover {
@@ -49,12 +49,21 @@
 }
 .res-image {
   width: 200px;
+  height: 200px;
+}
+.res-details > p {
+  width: 200px;
 }
 .res-details {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  white-space: normal; /* Allows text to wrap */
+  word-wrap: break-word; /* Break long words */
+  gap: 10px;
 }
 
 .filter-btn {
@@ -67,5 +76,32 @@
   height: 30px;
   width: 200px;
   margin: 10px;
+  cursor: pointer;
+}
+.shimmer-container {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 250px;
+  height: 500px;
+  background-color: #f0f0f0;
+}
+
+.login {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: rgb(245, 214, 214);
+  color: rgb(97, 90, 84);
+  font-size: 15px;
+  border-radius: 5px;
+  height: 30px;
+  width: 100px;
+  margin: 20px;
   cursor: pointer;
 }
