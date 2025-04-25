@@ -119,8 +119,8 @@
   height: 30px;
   width: 200px;
 }
-.search-btn {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+.search-btn,
+.btn {
   background-color: beige;
   border: 1px solid saddlebrown;
   color: rgb(43, 40, 40);
@@ -131,10 +131,20 @@
   margin: 10px;
   cursor: pointer;
 }
+.search-btn:hover,
+.btn:hover {
+  background-color: rgb(224, 224, 182);
+}
 .not-found-container {
   height: 500px;
   width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.user-class {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
 }
