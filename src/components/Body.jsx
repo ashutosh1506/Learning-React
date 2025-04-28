@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfRes, setListOfRes] = useState([]);
   const [filteredRes, setFilteredRes] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [topRatedRes, setTopRatedRes] = useState("Top Rated");
 
   useEffect(() => {
     fetchData();
@@ -29,6 +31,10 @@ const Body = () => {
       console.error("Error fetching Swiggy data:", error);
     }
   };
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false)
+    return <h1>Looks Like you're offline!!! Check your connection</h1>;
 
   return listOfRes.length === 0 ? (
     <Shimmer />
@@ -60,14 +66,20 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredList = listOfRes.filter(
-              (res) => res.info.avgRating > 4.3
-            );
+            if (topRatedRes === "Top Rated") {
+              setTopRatedRes("Show-All");
+              const filteredList = listOfRes.filter(
+                (res) => res.info.avgRating > 4.3
+              );
 
-            setFilteredRes(filteredList);
+              setFilteredRes(filteredList);
+            } else {
+              setTopRatedRes("Top Rated");
+              setFilteredRes(listOfRes);
+            }
           }}
         >
-          Top Rated Restaurants
+          {topRatedRes} Restaurants
         </button>
       </div>
 
