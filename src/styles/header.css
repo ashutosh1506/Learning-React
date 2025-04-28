@@ -1,0 +1,121 @@
+/* Updated header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 2rem;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border: none;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Nav items styling */
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.nav-items-ul {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+.nav-items-ul > li {
+  padding: 0.5rem 1rem;
+  margin: 0 0.3rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Stylish links */
+.nav-items-ul > li > a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 0.3rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-items-ul > li > a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff7b54;
+  transition: width 0.3s ease;
+}
+
+.nav-items-ul > li > a:hover {
+  color: #ff7b54;
+}
+
+.nav-items-ul > li > a:hover::after {
+  width: 100%;
+}
+
+/* Online status styling */
+.nav-items-ul > li:first-child {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  color: #666;
+  margin-right: 0.8rem;
+}
+
+/* Login button styling - replacing the old style */
+.login {
+  font-family: "Poppins", sans-serif;
+  background-color: #ff7b54;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 25px;
+  height: 36px;
+  width: 100px;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.login:hover {
+  background-color: #ff6b3d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 123, 84, 0.3);
+}
+
+/* Cart styling */
+.nav-items-ul > li:nth-child(5) {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}

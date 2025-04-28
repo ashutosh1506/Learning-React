@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/Shimmer.css";
 const Shimmer = () => {
   return (
     <div className="shimmer-container">
