@@ -1,6 +1,5 @@
 import React from "react";
 import { IMG_CDN_URL } from "../utils/constants";
-import "../styles/RestaurantCard.css";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -16,30 +15,34 @@ const RestaurantCard = (props) => {
   };
 
   return (
-    <div className="res-card">
-      <div className="res-image-container">
+    <div className="m-2.5 flex flex-col justify-between items-center w-[250px] h-[500px] bg-[#fff8f3] rounded-lg shadow-md transition-all duration-300 ease-in-out hover:cursor-pointer hover:border-2 hover:border-[rgb(168,94,94)] hover:transform hover:-translate-y-[5px] hover:shadow-lg">
+      <div className="m-2.5 p-2.5 w-[220px] h-[220px] overflow-hidden rounded-lg">
         <img
-          className="res-image"
+          className="w-full h-full object-cover transition-transform duration-500 ease-in-out rounded-md shadow-[0_8px_16px_rgb(168,94,94)] hover:scale-105"
           src={IMG_CDN_URL + cloudinaryImageId}
           alt="food-image"
         />
       </div>
-      <div className="res-details">
-        <h3>{name}</h3>
-        <p className="cuisines">{cuisines.join(", ")}</p>
-        <p className="rating">
+      <div className="font-['Poppins',sans-serif] flex flex-col items-center w-[90%] h-[250px] normal-case break-words p-[15px] mb-3 transition-all duration-300 ease-in-out relative hover:shadow-[0_4px_15px_rgba(168,94,94,0.15)] hover:transform hover:-translate-y-[3px]">
+        <h3 className="text-lg font-bold text-gray-800 mt-0 mb-2.5 text-center tracking-wider text-shadow-sm overflow-hidden text-ellipsis line-clamp-1 h-[22px] w-full">
+          {name}
+        </h3>
+        <p className="w-full text-sm my-1 text-center transition-all duration-300 ease-in-out mb-2.5 leading-normal text-gray-600 italic px-[5px] overflow-hidden text-ellipsis line-clamp-2 h-[42px] hover:text-gray-800">
+          {cuisines.join(", ")}
+        </p>
+        <p className="flex justify-center mb-2 w-full">
           <span
-            className="rating-badge"
+            className="text-white font-semibold py-1 px-2 rounded-lg inline-flex items-center shadow-sm text-[15px]"
             style={{ backgroundColor: getRatingColor(avgRating) }}
           >
             ★ {avgRating}
           </span>
         </p>
-        <p className="cost">
-          <span className="detail-icon">💰</span> {costForTwo}
+        <p className="flex items-center justify-center text-gray-600 font-medium my-1.5 w-full hover:text-gray-800">
+          <span className="mr-1.5 text-base">💰</span> {costForTwo}
         </p>
-        <p className="delivery-time">
-          <span className="detail-icon">🕒</span> {sla?.slaString}
+        <p className="flex items-center justify-center text-gray-600 font-medium my-1.5 w-full hover:text-gray-800">
+          <span className="mr-1.5 text-base">🕒</span> {sla?.slaString}
         </p>
       </div>
     </div>
