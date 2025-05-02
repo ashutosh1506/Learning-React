@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import RestaurantCard, { withTopLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext.js";
 
 const Body = () => {
   const [listOfRes, setListOfRes] = useState([]);
@@ -33,9 +34,10 @@ const Body = () => {
     }
   };
   const onlineStatus = useOnlineStatus();
-
   if (onlineStatus === false)
     return <h1>Looks Like you're offline!!! Check your connection</h1>;
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   return listOfRes.length === 0 ? (
     <Shimmer />
@@ -67,6 +69,7 @@ const Body = () => {
             Search
           </button>
         </div>
+
         <button
           className="font-['Poppins',sans-serif] bg-white border-2 border-[#ff7b54] text-[#ff7b54] text-[15px] font-medium rounded-full h-[42px] px-6 cursor-pointer transition-all duration-300 hover:bg-[#ff7b54] hover:text-white hover:-translate-y-0.5 hover:shadow-[0_4px_8px_rgba(255,123,84,0.2)]"
           onClick={() => {
@@ -85,6 +88,14 @@ const Body = () => {
         >
           {topRatedRes} Restaurants
         </button>
+        <div>
+          <label className="mx-4">UserName</label>
+          <input
+            className="border border-black p-1"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
       </div>
 
       <div className="flex flex-wrap">

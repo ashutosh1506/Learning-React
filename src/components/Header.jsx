@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
 
+  const data = useContext(UserContext);
   const onlineStatus = useOnlineStatus();
 
   return (
@@ -56,6 +58,9 @@ const Header = () => {
           </li>
           <li className="px-4 py-2 mx-1 cursor-pointer transition-all duration-300 ease-in-out font-medium flex items-center">
             Cart
+          </li>
+          <li className="px-4 py-2 mx-1 cursor-pointer transition-all duration-300 ease-in-out font-medium flex items-center">
+            {data.loggedInUser}
           </li>
           <button
             className="ml-4 bg-[#ff7b54] text-white text-[15px] border-none rounded-full h-9 w-[100px] cursor-pointer transition-all duration-300 font-medium hover:bg-[#ff6b3d] hover:translate-y-[-2px] hover:shadow-[0_4px_8px_rgba(255,123,84,0.3)]"
