@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withTopLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -9,6 +9,7 @@ const Body = () => {
   const [filteredRes, setFilteredRes] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [topRatedRes, setTopRatedRes] = useState("Top Rated");
+  const RestaurantCardTopRated = withTopLabel(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -93,7 +94,11 @@ const Body = () => {
             to={"/restaurants/" + res.info.id}
             className="no-underline text-inherit"
           >
-            <RestaurantCard resData={res.info} />
+            {res.info.avgRating > 4.3 ? (
+              <RestaurantCardTopRated resData={res.info} />
+            ) : (
+              <RestaurantCard resData={res.info} />
+            )}
           </Link>
         ))}
       </div>

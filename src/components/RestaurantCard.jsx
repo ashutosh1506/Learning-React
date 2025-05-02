@@ -24,7 +24,7 @@ const RestaurantCard = (props) => {
         />
       </div>
       <div className="font-['Poppins',sans-serif] flex flex-col items-center w-[90%] h-[250px] normal-case break-words p-[15px] mb-3 transition-all duration-300 ease-in-out relative hover:shadow-[0_4px_15px_rgba(168,94,94,0.15)] hover:transform hover:-translate-y-[3px]">
-        <h3 className="text-lg font-bold text-gray-800 mt-0 mb-2.5 text-center tracking-wider text-shadow-sm overflow-hidden text-ellipsis line-clamp-1 h-[22px] w-full">
+        <h3 className="text-lg font-bold text-gray-800 mt-0 mb-2.5 text-center tracking-wider text-shadow-sm overflow-hidden text-ellipsis line-clamp-1 h-[25px] w-full">
           {name}
         </h3>
         <p className="w-full text-sm my-1 text-center transition-all duration-300 ease-in-out mb-2.5 leading-normal text-gray-600 italic px-[5px] overflow-hidden text-ellipsis line-clamp-2 h-[42px] hover:text-gray-800">
@@ -47,6 +47,19 @@ const RestaurantCard = (props) => {
       </div>
     </div>
   );
+};
+
+export const withTopLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div className="relative">
+        <span className="absolute  left-1 z-10 inline-flex items-center rounded-md bg-gray-50  px-2 py-1.5 text-xs font-medium text-red-700 ring-1 ring-red-600/10 ring-inset">
+          Top Rated
+        </span>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;
