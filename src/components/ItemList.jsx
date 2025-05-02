@@ -1,8 +1,7 @@
 import { IMG_CDN_URL } from "../utils/constants.js";
+import ReadMore from "./ReadMore.jsx";
 
 const ItemList = ({ items }) => {
-  //   console.log(items);
-
   return (
     <div>
       {items.map((item) => (
@@ -17,9 +16,10 @@ const ItemList = ({ items }) => {
             <span className="font-bold">
               - ₹{(item.card.info.price || item.card.info.defaultPrice) / 100}
             </span>
-            <p className="font-semibold text-[16px] leading-[21px] tracking-[-0.4px] text-[rgba(2,6,12,0.6)]">
+            <ReadMore text={item.card.info.description} limit={200} />
+            {/* <p className="font-semibold text-[16px] leading-[21px] tracking-[-0.4px] text-[rgba(2,6,12,0.6)]">
               {item.card.info.description}
-            </p>
+            </p> */}
           </div>
           <div className="w-[156px] h-[144px]">
             <div className="absolute mx-5 mt-30 w-30 h-10">

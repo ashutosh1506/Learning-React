@@ -6,3 +6,7 @@ export const IMG_CDN_URL =
 
 export const MENU_API =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9352403&lng=77.624532&restaurantId=";
+export const downArrow =
+  "https://img.icons8.com/?size=100&id=39786&format=png&color=000000";
+export const rightArrow =
+  "https://img.icons8.com/?size=100&id=98967&format=png&color=000000";
