@@ -1,7 +1,17 @@
+import { useDispatch } from "react-redux";
 import { IMG_CDN_URL } from "../utils/constants.js";
 import ReadMore from "./ReadMore.jsx";
+import { addItem, removeItem } from "../utils/cartSlice.js";
 
-const ItemList = ({ items }) => {
+const ItemList = ({ items, cartValue = false }) => {
+  const dispatch = useDispatch();
+  const handleAddItem = (item) => {
+    // Dispatch an action
+    dispatch(addItem(item));
+  };
+  const handleRemoveItem = (item) => {
+    dispatch(removeItem(item));
+  };
   return (
     <div>
       {items.map((item) => (
@@ -23,9 +33,21 @@ const ItemList = ({ items }) => {
           </div>
           <div className="w-[156px] h-[144px]">
             <div className="absolute mx-5 mt-30 w-30 h-10">
-              <button className="w-full p-2 bg-white shadow-lg rounded-lg cursor-pointer  hover:bg-gray-100 font-semibold text-[18px] text-[rgb(27,166,114)]">
-                ADD
-              </button>
+              {cartValue ? (
+                <button
+                  className="w-full p-2 bg-white shadow-lg rounded-lg cursor-pointer  hover:bg-gray-100 font-semibold text-[18px] text-[rgb(27,166,114)]"
+                  onClick={() => handleRemoveItem(item)}
+                >
+                  Remove
+                </button>
+              ) : (
+                <button
+                  onClick={() => handleAddItem(item)}
+                  className="w-full p-2 bg-white shadow-lg rounded-lg cursor-pointer  hover:bg-gray-100 font-semibold text-[18px] text-[rgb(27,166,114)]"
+                >
+                  ADD
+                </button>
+              )}
             </div>
             <img
               className="h-full  w-full rounded-lg"

@@ -1,0 +1,8 @@
+// jsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "module": "esnext"
+  },
+  "exclude": ["node_modules"]
+}

@@ -3,12 +3,14 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
 
   const data = useContext(UserContext);
   const onlineStatus = useOnlineStatus();
+  const cartItems = useSelector((store) => store.cart.items);
 
   return (
     <div className="flex justify-between items-center bg-white shadow-md py-3 px-8 sticky top-0 z-100 border-none">
@@ -56,9 +58,15 @@ const Header = () => {
               Grocery
             </Link>
           </li>
-          <li className="px-4 py-2 mx-1 cursor-pointer transition-all duration-300 ease-in-out font-medium flex items-center">
-            Cart
+          <li className="px-4 py-2 mx-1 cursor-pointer transition-all duration-300 ease-in-out">
+            <Link
+              to={"/cart"}
+              className="text-gray-800 font-medium relative py-1 no-underline hover:text-[#ff7b54] after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-[#ff7b54] after:transition-width after:duration-300 hover:after:w-full"
+            >
+              Cart({cartItems.length})
+            </Link>
           </li>
+
           <li className="px-4 py-2 mx-1 cursor-pointer transition-all duration-300 ease-in-out font-medium flex items-center">
             {data.loggedInUser}
           </li>
