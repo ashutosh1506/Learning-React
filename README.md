@@ -54,3 +54,8 @@ module.exports = {
 
 - Jest Configuration : npx jest --init
 - Install jsdom library : npm i --save-dev jest-environment-jsdom
+- Install npm install --save-dev @babel/preset-typescript
+- Include @babel/preset-typescript inside babel.cofig.js
+- Install @babel/preset-react - to make JSX work in test cases
+- Include @babel/preset-react inside babel.cofig.js
+- Install npm i -D @testing-library/jest-dom

@@ -20,6 +20,9 @@
   "devDependencies": {
     "@babel/core": "^7.27.1",
     "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@types/react-redux": "^7.1.34",
     "babel-jest": "^29.7.0",
@@ -38,7 +41,7 @@
     "react-router-dom": "^7.5.2",
     "tailwindcss": "^4.1.5"
   },
-  "browserlist": [
+  "browserslist": [
     "last 2 versions"
   ]
 }
