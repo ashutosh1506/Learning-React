@@ -1,0 +1,64 @@
+{
+  "id": "485933",
+  "name": "Dindigul Thalappakatti",
+  "cloudinaryImageId": "cluiug5t7vmz7idrhh82",
+  "locality": "Nexus",
+  "areaName": "Koramangala",
+  "costForTwo": "₹500 for two",
+  "cuisines": ["South Indian", "Biryani", "Chinese", "North Indian"],
+  "avgRating": 4.3,
+  "parentId": "332",
+  "avgRatingString": "4.3",
+  "totalRatingsString": "2.1K+",
+  "sla": {
+    "deliveryTime": 48,
+    "lastMileTravel": 2.4,
+    "serviceability": "SERVICEABLE",
+    "slaString": "45-50 mins",
+    "lastMileTravelString": "2.4 km",
+    "iconType": "ICON_TYPE_EMPTY"
+  },
+  "availability": {
+    "nextCloseTime": "2025-05-14 00:00:00",
+    "opened": true
+  },
+  "badges": {},
+  "isOpen": true,
+  "type": "F",
+  "badgesV2": {
+    "entityBadges": {
+      "imageBased": {},
+      "textBased": {},
+      "textExtendedBadges": {}
+    }
+  },
+  "aggregatedDiscountInfoV3": {
+    "header": "₹165 OFF",
+    "subHeader": "ABOVE ₹399",
+    "discountTag": "FLAT DEAL",
+    "headerTypeV2": 12
+  },
+  "orderabilityCommunication": {
+    "title": {},
+    "subTitle": {},
+    "message": {},
+    "customIcon": {}
+  },
+  "differentiatedUi": {
+    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+    "differentiatedUiMediaDetails": {
+      "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+      "lottie": {},
+      "video": {}
+    }
+  },
+  "reviewsSummary": {},
+  "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+  "restaurantOfferPresentationInfo": {},
+  "externalRatings": {
+    "aggregatedRating": {
+      "rating": "--"
+    }
+  },
+  "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+}
